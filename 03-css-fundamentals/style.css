@@ -2,6 +2,8 @@
   /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+  /* NB this is done to remove all the margin and padding so that you can style better / have more control of the styling of the page */
+  /* NB this is called global reset and it is the first thing that Jonas does when he begins a new project */
 }
 
 /* PAGE SECTIONS */
@@ -13,11 +15,14 @@ body {
   position: relative;
 }
 
+/* NB how to center the page? 1) wrap all the content that you want to center inside a dive; 2) apply this style */
+/* NB if the parent is 700px wide, all its children are going to be 700px as well (the child element can never be wider than the parent element) */
 .container {
   width: 800px;
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto;
+  /* margin: top-bottom left-right */
 }
 
 .main-header {
@@ -110,6 +115,10 @@ li:last-child {
   font-size: 16px;
 } */
 
+/*
+= the problem with this type of selectors is that it essentially encodes
+= the HTML structure into the CSS selector, and that is not a good idea
+*/
 /* article header p {
   font-style: italic;
 } */
@@ -136,9 +145,9 @@ li:last-child {
   list-style: none;
 }
 
-body {
-  /* background-color: orangered; */
-}
+/* body {
+  background-color: orangered;
+} */
 
 /* .first-li {
   font-weight: bold;
@@ -153,20 +162,49 @@ li:last-child {
 }
 
 li:nth-child(even) {
-  /* color: red; */
+  color: magenta;
 }
 
-/* Misconception: this won't work! */
+/*NB Misconception: this won't work! */
+/* NB this would work only if the paragraph would be the first child of the article */
 article p:first-child {
   color: red;
+  border: 1px solid red;
 }
 
-/* Styling links */
+/* this works because there is a paragraph that is the last child of the article */
+article p:last-child {
+  color: red;
+  border: 1px solid red;
+}
+
+/* NB TAKEAWAY: when we mix multiple elements inside of a parent element, then these pseudo-classes don't work really well */
+/* NB they are perfect in situations in which all the child elements are the same, i.e. for li elements */
+
+/* ========================================================================== */
+/*# Styling links */
+/* NB for styling hyperlinks, it is bad practice to style a on its own */
+/* NB we should style directly with a pseudo class because it allows us to style the link in dfferent states */
+/*
+we shouldn't simply select the anchor and then style it.
+Instead, we should style a pseudo class of the anchor
+because that will then allow us to target different states.
+NB define the states always in this order!!
+/ LVHA
+/ a:link
+/ a:visited
+/ a:hover
+/ a:active
+*/
+/* a:link (:link is the pseudoclass) targets all anchor elements that have an href attribute (NB you can have anchor tags without an href attribute) */
 a:link {
   color: #1098ad;
   text-decoration: none;
+  /*get rid of underline*/
 }
 
+/* ":visited" pseudoclass  --> there are websites that give a different colors to links that have been clicked before (e.g. google) */
+/* we could do the same, but in practice we actually never do it (usually we give the visited link the same color of the normal link) */
 a:visited {
   /* color: #777; */
   color: #1098ad;
@@ -175,16 +213,21 @@ a:visited {
 a:hover {
   color: orangered;
   font-weight: bold;
-  text-decoration: underline orangered;
+  text-decoration: underline wavy orangered;
+  /* text-decoration: underline dotted orangered; */
 }
 
+/* :active is the state in which we are actually clicking */
 a:active {
   background-color: black;
   font-style: italic;
 }
-/* LVHA */
+
+
+/* ========================================================================== */
 
 .post-img {
+  /* NB percentage of the width of the parent container */
   width: 100%;
   height: auto;
 }
@@ -222,7 +265,7 @@ h1::first-letter {
   margin-right: 5px;
 }
 
-h3 + p::first-line {
+h3+p::first-line {
   /* color: red; */
 }
 
