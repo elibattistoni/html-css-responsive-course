@@ -230,15 +230,16 @@ a:active {
   /* NB percentage of the width of the parent container */
   width: 100%;
   height: auto;
+  /* images are actually inline block elements */
 }
 
 nav a:link {
   /* background-color: orangered;
   margin: 20px;
   padding: 20px;
-
   display: block; */
-
+  /* NB the anchor element is an inline element! therefore adding margin top and bottom to an inline element (even if in the computed styles in the dev tools appear, they are not really added */
+  /* NB therefore you need to change it from inline to inline-block */
   margin-right: 30px;
   margin-top: 10px;
   display: inline-block;
