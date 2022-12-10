@@ -273,9 +273,14 @@ h3+p::first-line {
 }
 
 h2 {
-  /* background-color: orange; */
+  background-color: orange;
   position: relative;
+  /* position relative because the h2::before pseudoelements will be displayed absolutely, relative to this */
 }
+
+/* h2::after {
+  content: "HALLOOO"
+} */
 
 h2::before {
   content: "TOP";
@@ -284,6 +289,7 @@ h2::before {
   font-size: 16px;
   font-weight: bold;
   display: inline-block;
+  /* pseudo elements are usually inline elements */
   padding: 5px 10px;
   position: absolute;
   top: -10px;

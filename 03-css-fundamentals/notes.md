@@ -18,3 +18,25 @@ NB most of the time we will not edit the display property, and simply use the pr
 
 # Positioning modes
 NB `position: absolute` use this for single elements like this button or other small things; but in the real world you should not use it to position the menu on the top of the page, or the e.g. author image anywjere on the page: for these things we use specal techniques for building layouts
+
+# Pseudo-elements
+pseudo elements are elements that don't exist in the HTML bu that we can select and style in CSS.
+
+e.g. you can select the very first letter of a paragraph a style it differently.
+`h1::first-letter`
+
+**NB pseudo-classes are written with just one colon `:`, and pseudo-elements are written with two colons `::`**
+
+- `::first-letter`
+- `::first-line`
+- `h3 + p` adjacent sibling == sibling that is the very next element ==> the p element that is the exact next sibling of h3
+- `::after` and `::before` these are the most used and important pseudo elements; `::after` creates a pseudo element that will automatically be the very last child of the selected element (h2::after will create a last pseudo element) and `::before` creates a pseudo element that is the very first child of the selected element (NB if you use position:absolute it does not matter if you create it with ::after or ::before)
+```
+h2::after {
+  content: "HALLOOO"
+}
+```
+# Debugging
+- HTML validator online if you find bugs in the HTML https://validator.w3.org/
+- diffchecker to find differences between two texts / HTML https://www.diffchecker.com/
+- CSS BEST PRACTICE: KEEP YOUR SELECTORS SIMPLE!!!
