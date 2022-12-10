@@ -15,3 +15,6 @@ NB the box model applies to block level elements, whereas the same is not true f
 NB with CSS we can change from inline boxes to block-level boxes, and we can do that with **display: block**; we can transform any block level element to an inline element with **display: inline**
 
 NB most of the time we will not edit the display property, and simply use the predefined box type because by default they make sense. Howver we can set the display property to block if for example we want to make a small inline element occupy an entire line (which sometimes need in he real world). Then the other way around, sometimes we don't want a block level element to push all the other elements into a new line. So, basically, we don't always want them to occupy all the available blank space that there is to fill. And so, in that case, we can set them to an inline element or, probably even more useful, we can set them to an inline block element because then we can still apply the box model as usual.
+
+# Positioning modes
+NB `position: absolute` use this for single elements like this button or other small things; but in the real world you should not use it to position the menu on the top of the page, or the e.g. author image anywjere on the page: for these things we use specal techniques for building layouts

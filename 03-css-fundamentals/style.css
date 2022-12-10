@@ -13,6 +13,7 @@ body {
 
   border-top: 10px solid #1098ad;
   position: relative;
+  /* NB position: relative because you want to have the button with position absolute relatively to this body element */
 }
 
 /* NB how to center the page? 1) wrap all the content that you want to center inside a dive; 2) apply this style */
@@ -255,6 +256,7 @@ button {
   cursor: pointer;
 
   position: absolute;
+  /* NB the first parent element that has position relative wins (i.e. it will be positioned absolutely relative to that parent element */
   /* top: 50px;
   left: 50px; */
   bottom: 50px;
