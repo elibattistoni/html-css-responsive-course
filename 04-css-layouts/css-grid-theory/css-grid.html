@@ -40,9 +40,34 @@
         margin: 40px;
 
         /* CSS GRID */
+        display: grid;
+        /* grid-template-columns: 250px 150px; */
+        /* this will generate two columns: one with a width of 250px and another
+        with a width of 150px */
+        /* the number of rows is automatic, depending on the number of columns
+        and grid items */
+        /* i.e. as many rows as necessary will be created in order to accomodate
+        for all the content */
+        grid-template-columns: 200px 200px 100px 100px;
+        /* like with flexbox, the elements stretch across the entire cell, i.e.
+        across the height and width that we defined for each cell */
+        /* since el--3 has a height of 150px, the entire row will have a height
+        of 150px in order to accomodate for the max height, and all the elements
+        will stretch as much as they need to fill the entire row */
+        /* NB we can also size the rows to make them as tall as we want */
+        grid-template-rows: 300px 200px;
+        /* the el--3 does not stretch because it has the height of 150px */
+
+        /* NB the only way to define a space between the grid items is with gap, like with flexbox */
+        /* gap: 30px; */
+
+        /* NB what we cannot do with flexbox but we can do with grid, is to define separate values for the column and for the rows */
+        column-gap: 30px;
+        row-gap: 60px;
       }
 
       .container--2 {
+        display: none;
         /* STARTER */
         font-family: sans-serif;
         background-color: black;
