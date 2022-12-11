@@ -40,18 +40,35 @@
         margin: 40px;
 
         /* FLEXBOX */
+        display: flex;
+        align-items: center;
+        /* the default is stretch (the result at the beginning) otherwise ther is also flex-start and flex-end */
+        justify-content: space-between;
+        /* center, space-between, space-around */
       }
     </style>
   </head>
   <body>
+    <!-- flex container -->
     <div class="container">
+      <!-- NB flex item -->
+      <!-- horizontally each flexbox item occupues exactly the space that it needs for its content -->
+      <!-- however vertically, by default, all the flex items are as tall as the tallest element (we set .el--3 to height 150px) -->
+      <!-- and if a height is note specified, then they would also occupy the space that is necessary for the content -->
       <div class="el el--1">HTML</div>
+      <!-- flex item -->
       <div class="el el--2">and</div>
+      <!-- flex item -->
       <div class="el el--3">CSS</div>
+      <!-- flex item -->
       <div class="el el--4">are</div>
+      <!-- flex item -->
       <div class="el el--5">amazing</div>
+      <!-- flex item -->
       <div class="el el--6">languages</div>
+      <!-- flex item -->
       <div class="el el--7">to</div>
+      <!-- flex item -->
       <div class="el el--8">learn</div>
     </div>
   </body>
