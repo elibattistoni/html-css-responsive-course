@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   margin: 0 auto;
 }
 
@@ -241,4 +241,22 @@ nav {
   content: "";
   clear: both;
   display: block;
+}
+
+article {
+  /* background-color: rgb(134, 224, 85); */
+  width: 825px;
+  float: left
+}
+
+aside {
+  /* background-color: rgba(205, 102, 50, 0.877); */
+  width: 300px;
+  float: right
+}
+
+footer {
+  /* background-color: rgba(231, 231, 64, 0.822); */
+  /* we can clear the float on this element (no ned to create an empty div or using the clearfix class */
+  clear: both
 }
