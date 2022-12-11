@@ -19,6 +19,7 @@ body {
 
 .main-header {
   background-color: #f7f7f7;
+  /* background-color: red; */
   padding: 20px 40px;
   margin-bottom: 60px;
 }
@@ -224,4 +225,20 @@ h1 {
 
 nav {
   float: right
+}
+
+/* = Clearing floats */
+/* if in the html you add <div class="clear"></div> as element in the header */
+.clear {
+  clear: both;
+  /* NB this is to clear floats: you can use the value "both" to clear both left and right float */
+  /* NB otherwise we can use left to clear the left float, and right to clear the right float */
+}
+
+/* = alternative to clearing floats: the clearfix hack */
+/* add the clearfix class in the header */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
 }
