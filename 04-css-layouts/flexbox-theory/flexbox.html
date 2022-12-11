@@ -45,13 +45,58 @@
         /* the default is stretch (the result at the beginning) otherwise ther is also flex-start and flex-end */
         justify-content: flex-start;
         /* center, space-between, space-around */
+        
+        /* space between flex items */
+        /* gap: 30px; */
+      }
 
-        gap: 30px
+      .el {
+        /* DEFAULTS for flex property
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        */
+
+        /* IMPORTANT to size the width of flex items, we don't use the width property but flex-basis */
+        /* flex-basis: 250px; */ 
+        /* TODO UNCOMMENT TO SEE THIS WORK (BUT COMMENT flex-grow) */
+        /* NB flex-basis is more of a recommendation that we make to the browser, but the browser will determine the optimal length */
+        /* by default flexbox is allowed to shrink elements so that they fit the container, i.e.: */
+        /* if there is no enough space in a container to fit the items with the size that we define with flex-basis */
+        /* then flexbox can shrink these items by default because flex shrink is set to 1 by default */
+        /* if we set flex-shrink to 0, then we change this behavior and the items are not shrinked */
+        /* but then the content will no longer fit the container */
+        /* NB setting flex-shrink to 0 is not always advisable */
+        /* flex-shrink: 0; */
+        /* flex-grow determines whether elements are allowed to grow as large as they can or not */
+        /* if you remove flex-basis and add the following: */
+        /* flex-grow: 1; */
+        /* TODO UNCOMMENT TO SEE THIS WORK (BUT COMMENT flex-basis)  */
+        /* if flex-grow is 0, all flex items occupies the width that they need to fit the content */
+        /* if you set flex-grow: 1 then the flex items will all have the same size and in total they filled up the whole flex container */
+        /* i.e. all the space is evenly divided by all the flex-items */
+        /* IMPORTANT if you comment flex grow here, for all the elements, and then you set if for a specific element, then that element is allowed to fill the remaining space */
+        /* while the other ones fill up only as much space as they need */
+        /* NB also look at how the items behave if you set flex-grow: 0 here and in a specific item flex-grow: 3 */
+        /* basically that item will get 3x of the available empty space the empty space */
+        /* 
+        e.g. if the empty space is 600px and you have 6 items
+        then the ones that get the same flex-grow (e.g. 1) will get 100px
+        but if there is an element that has flex-grow: 3, than that element will get 3x 100px (the available empty space)
+         */
+         /* BEST PRACTICE neve use flex-grow flex-shrink flex-basis individually */
+
+         /* the shorthand flex property */
+         /* flex: flex-grow flex-shrink flex-basis */
+         flex: 1;
+         /* will automatically know that this is the flex-grow */
       }
 
       .el--1 {
         align-self: flex-start;
         /* order: 2 */
+        /* IMPORTANT */
+        /* flex-grow: 1 */
       }
 
       .el--5 {
@@ -65,9 +110,13 @@
         /* this one becomes the first one */
       }
       </style>
+      <!-- NB ORDER -->
       <!-- NB changing the order in which flex items are displayed on the page can be very helpful when we are -->
       <!-- NB adapting a bigger layout to a small layout for mobile screens -->
       <!-- NB the default value is always zero (IMPORTANT for all of them is zero, regardless their order on the screen); so if we want to move an element to the very first position, we need to specify a number lower than that -->
+
+      <!-- = flex property -->
+      <!-- = the flex property is a short hand for flex-grow, flex-shrink and flex-spaces -->
   </head>
   <body>
     <!-- flex container -->
