@@ -1,6 +1,8 @@
+/* NB the following is a global reset that you should do every time */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box
 }
 
 /* PAGE SECTIONS */
@@ -40,8 +42,17 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
+  /* NB now the element disappeared / went to the bottom of the page */
+  /* width: 500px; */
+  /* NB BOX SIZING PROPERTY: in the normal box model the final element width (height) is: */
+  /* NB == right (top) border + right (top) padding + width (height) + left (bottom) padding + left (bottom) border */
+  /* NB we have a way to define a certain width (height) and then the element would be exactly that size, no matter the border or padding */
+  /* NB box-sizing: "border-box" and with this the width and height go all the way from one side of the border to the opposite side of the borser (including the content and the padding) */
+  /* so that the width and height that we define, will actually be the final width and height; and if you have some padding on the element, this will be subtracted from the content area and therefore make it smaller */
+  /* NB the default behavior is called content-box */
+  /* box-sizing: border-box */
+  /* NB since we want to have it applied to all the elements of the page, we will put this in the * selector at the beginning */
 }
 
 /* SMALLER ELEMENTS */
@@ -72,6 +83,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -112,6 +124,7 @@ li:last-child {
 
 .related {
   list-style: none;
+  margin-left: 0
 }
 
 li:first-child {
