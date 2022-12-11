@@ -43,10 +43,31 @@
         display: flex;
         align-items: center;
         /* the default is stretch (the result at the beginning) otherwise ther is also flex-start and flex-end */
-        justify-content: space-between;
+        justify-content: flex-start;
         /* center, space-between, space-around */
+
+        gap: 30px
       }
-    </style>
+
+      .el--1 {
+        align-self: flex-start;
+        /* order: 2 */
+      }
+
+      .el--5 {
+        align-self: stretch;
+        order: 1
+        /* this one becomes the last */
+      }
+
+      .el--6 {
+        order: -1
+        /* this one becomes the first one */
+      }
+      </style>
+      <!-- NB changing the order in which flex items are displayed on the page can be very helpful when we are -->
+      <!-- NB adapting a bigger layout to a small layout for mobile screens -->
+      <!-- NB the default value is always zero (IMPORTANT for all of them is zero, regardless their order on the screen); so if we want to move an element to the very first position, we need to specify a number lower than that -->
   </head>
   <body>
     <!-- flex container -->
@@ -55,21 +76,21 @@
       <!-- horizontally each flexbox item occupues exactly the space that it needs for its content -->
       <!-- however vertically, by default, all the flex items are as tall as the tallest element (we set .el--3 to height 150px) -->
       <!-- and if a height is note specified, then they would also occupy the space that is necessary for the content -->
-      <div class="el el--1">HTML</div>
+      <div class="el el--1">HTML 1</div>
       <!-- flex item -->
-      <div class="el el--2">and</div>
+      <div class="el el--2">and 2</div>
       <!-- flex item -->
-      <div class="el el--3">CSS</div>
+      <div class="el el--3">CSS 3</div>
       <!-- flex item -->
-      <div class="el el--4">are</div>
+      <div class="el el--4">are 4</div>
       <!-- flex item -->
-      <div class="el el--5">amazing</div>
+      <div class="el el--5">amazing 5</div>
       <!-- flex item -->
-      <div class="el el--6">languages</div>
+      <div class="el el--6">languages 6</div>
       <!-- flex item -->
-      <div class="el el--7">to</div>
+      <div class="el el--7">to 7</div>
       <!-- flex item -->
-      <div class="el el--8">learn</div>
+      <div class="el el--8">learn 8</div>
     </div>
   </body>
 </html>
