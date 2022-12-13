@@ -34,3 +34,21 @@ Both apply, because both are true.
 IMPORTANT if you have conflicting css declarations inside the media queries (which is usually the case), then the one which appears LAST in the code is the one that will apply (last meaning in terms of cascading, i.e. after, the last one).
 
 If you have a phone with width 1000ps, then the second media query will apply.
+
+# Breakpoints: what they are and how to select them
+
+Breakpoints = viewport widths at which we want our design to change, i.e. the pixel values that we want to put in our media queries
+
+there are 2 strategies for selecting media queries:
+1. the old one, based on populare devices ==> **BAD STRATEGY!!**
+2. **GOOD STRATEGY** the strategy based on screen width ranges: we look at the most used widths for different categories of devices (phones, tablets, desktop computers) and then we try to group them together in some logical way to then pick our breakpoints from that ==> we set breakpoints between similar device sizes
+   - 300px - 500px ==> most phones are between 300 and 500px ==> breakpoint at 600px
+   - 600px - 900px ==> most tablets are between 600 and 900px ==> breakpoint at 900px
+   - 900px - 1100px ==> most landscape tablets are between 900 and 1100px ==> breakpoint at 1200px
+   - bigger than 1200px ==> most desktop computers
+3. **PERFECT STRATEGY** setting breakpoints at places where the design breaks down: in this strategy we can try to completely ignore devices and device categories, and only look at our content and our design:
+    - we begin at one screen size (either desktop or mobile size) then we start decreasing our screen width (or increasing for mobile-first)
+    - as soon as the design breaks (i.e. when the design is no longer acceptable), we create a new breakpoint, and that's it
+So with this strategy we put breakpoints whenever the design starts to look weird, out of place, and try not to think about devides at all.
+
+We will use this perfect strategy together with the good strategy (because it's quite hard to implement the perfect strategy completely without thinking about devices)
