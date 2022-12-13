@@ -52,3 +52,8 @@ there are 2 strategies for selecting media queries:
 So with this strategy we put breakpoints whenever the design starts to look weird, out of place, and try not to think about devides at all.
 
 We will use this perfect strategy together with the good strategy (because it's quite hard to implement the perfect strategy completely without thinking about devices)
+
+
+
+
+IMPORTANT: create a new file for the media queries!!!
