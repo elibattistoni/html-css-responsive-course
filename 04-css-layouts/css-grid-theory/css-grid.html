@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Grid</title>
+
+    <!-- #################### STYLE SINGLE ELEMENTS ####################### -->
     <style>
       .el--1 {
         background-color: blueviolet;
@@ -31,7 +33,10 @@
       .el--8 {
         background-color: crimson;
       }
+    </style>
 
+    <!-- #################### STYLE CONTAINER 1 & its elements ####################### -->
+    <style>
       .container--1 {
         /* STARTER */
         font-family: sans-serif;
@@ -105,22 +110,38 @@
         grid-column: 1 / -1;
         /* if you want to start at 2 */
         grid-column: 2 / -1;
-
       }
 
+      .container--1 {
+        display: none
+        /* NB temporary: uncomment to play with this!!! */
+      }
+    </style>
+
+    <!-- #################### STYLE CONTAINER 2 ####################### -->
+    <style>
       .container--2 {
-        display: none;
         /* STARTER */
         font-family: sans-serif;
         background-color: black;
         font-size: 40px;
         margin: 100px;
-
+        
         width: 1000px;
         height: 600px;
-
+        
         /* CSS GRID */
+        display: grid;
       }
+
+      .container--2 {
+        /* NB commnet/uncomment to see it work */
+        /* display: none; */
+      }
+    </style>
+
+
+
     </style>
   </head>
   <body>
