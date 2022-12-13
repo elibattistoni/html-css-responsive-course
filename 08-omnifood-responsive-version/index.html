@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- NB IMPORTANT this line is crucial for responsive web design; if there is not this line of code, responsive web design will not work -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- the reason for that is that browsers on mobile devices basically zoom
+      the page out by default until it fits the screen, and that is not what we want with media queries.
+    with media queries we simply want to make our layout/design smaller, i.e. less wide -->
+    <!-- and that line of code basically tells the browser that the page must match the screen's width -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
