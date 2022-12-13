@@ -15,6 +15,9 @@ NB rem has some bugs in some browsers when used in media queries, therefore in m
 
 NB when building a responsive design, you should start at the top, i.e. at the biggest width, and then make it smaller and smaller and keep adjusting whenever the design breaks
 NB obviously if you build mobile first, you will work in the smae way but starting from the smallest width and then make it bigger and bigger
+
+
+IMPORTANT a media query should work over a range of at least 200 or 300px!!!
 */
 
 /*=*******************************************/
@@ -92,12 +95,73 @@ NB obviously if you build mobile first, you will work in the smae way but starti
   .testimonials-container {
     padding: 9.6rem 3.2rem
   }
-
 }
 
 
+/*=*****************************************************/
+/*# BELOW circa 9404px ==> TABLETS */
+/*=*****************************************************/
+/* cs 944 / 16 = ca 59 */
 
+@media (max-width: 59em) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
 
+  /* change layout hero to 1 column instead of 2 */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box, .hero-img-box {
+    text-align: center
+  }
+
+  .hero-img {
+    width: 60%
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem
+  }
+
+  .logos img {
+    height: 2.4rem
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    /* 3/5 = 60% + 2/5 = 40% */
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 1.2rem
+  }
+}
 
 
 
@@ -105,6 +169,7 @@ NB obviously if you build mobile first, you will work in the smae way but starti
 /*
 - Font sizes (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
 - Spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
