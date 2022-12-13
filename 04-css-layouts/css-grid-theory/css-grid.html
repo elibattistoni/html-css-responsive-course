@@ -125,24 +125,59 @@
         font-family: sans-serif;
         background-color: black;
         font-size: 40px;
-        margin: 100px;
+        margin: 40px;
         
-        width: 1000px;
+        width: 700px;
         height: 600px;
         
         /* CSS GRID */
         display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
       }
 
       .container--2 {
         /* NB commnet/uncomment to see it work */
         /* display: none; */
       }
+
+      /* NB alignind grid items is a bit different than with flexbox, because
+      we can align both the row track and the column track inside the container */
+      /* and we can align also the grid items inside of the tracks, and this is
+      because sometimes the grid items are smaller than the cells that they are in */
+      .container--2 {
+        gap: 30px;
+        /* align grid tracks inside of the container (i.e align the columns and the rows)
+        NB this is only possible because the grid itself is smaller than the grid container */
+        /* i.e. distribute empty space */
+        justify-content: center;
+        /* NB justify is horizontally, align is vertically */
+        /* justify-content: space-between; */
+        align-content: center;
+        /* align-content: end; */
+        /* align-content: start; */
+
+        /* NB moving items around inside cells: ALIGNING ITEMS INSIDE CELLS */
+        /* the default is stretch */
+        /* align-items: stretch; */
+        align-items: center;
+        justify-items: center;
+      }
+
+      .el--3 {
+        align-self: stretch;
+        justify-self: stretch;
+      }
+
+      .el--7 {
+        align-self: end;
+        justify-self: end;
+      }
+
     </style>
 
 
 
-    </style>
   </head>
   <body>
     <div class="container--1">
