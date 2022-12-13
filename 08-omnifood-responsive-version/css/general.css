@@ -68,6 +68,10 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
+  overflow-x: hidden;
+  /* this prevents you from scrolling horizontally */
+  /* NB you need to add it to both the body and the html elements to make it work for the mobile nav */
+
 }
 
 body {
@@ -75,6 +79,9 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
+  overflow-x: hidden;
+  /* NB the above means that all the elements that overflow the viewport in the x-axis (horizontally) will simply be hidden */
+  /* NB it only works if there is nothing absolutely positioned in relation to body */
 }
 
 /**************************/
