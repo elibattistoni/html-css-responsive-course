@@ -62,9 +62,30 @@
         /* gap: 30px; */
 
         /* NB what we cannot do with flexbox but we can do with grid, is to define separate values for the column and for the rows */
-        column-gap: 30px;
-        row-gap: 60px;
+        column-gap: 20px;
+        row-gap: 40px;
+
+        /* IMPORTANT the fr unit: it allows us to create flexible columns and flexible rows */
+        /* fr = fractional = fraction */
+        grid-template-columns: 200px 200px 1fr 1fr;
+        
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        /* this means that the grid space is now "divided" into 5 fractions, and the first column gets 2 of them */
+
+        /* the code below instead, "auto" means that it will only take exactly the size that is necessary to fill its content */
+        grid-template-columns: 2fr 1fr 1fr auto;
+
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* NB instead of writing the code above, you can write: */
+        grid-template-columns: repeat(4, 1fr);
+
+        grid-template-rows: 1fr 1fr;
+
+        /* NB how to place a grid item (e.g. 8) into another grid cell (e.g. 2) i.e. in a grid cell that was not its default one */
+
+
       }
+
 
       .container--2 {
         display: none;

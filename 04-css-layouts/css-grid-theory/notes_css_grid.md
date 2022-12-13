@@ -15,4 +15,4 @@ GRID CELLS == the cells created by the grid lines; grid cells might be filled by
 
 we can create spaces between grid items, and these are called GUTTERS or GAPS
 
-GRID TRACK (row track, column track) a grid track can be a row or a column
+GRID TRACK a grid track can be a row or a column (e.g. in a 2 (height) x 3 (width) rectangle, we have 2 row tracks and 3 column tracks)
