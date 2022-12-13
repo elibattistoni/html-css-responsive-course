@@ -56,4 +56,4 @@ We will use this perfect strategy together with the good strategy (because it's 
 
 
 
-IMPORTANT: create a new file for the media queries!!!
+IMPORTANT: create a new file for the media queries, named: "queries.css"
