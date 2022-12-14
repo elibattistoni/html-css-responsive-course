@@ -225,7 +225,7 @@ IMPORTANT a media query should work over a range of at least 200 or 300px!!!
 }
 
 /*=*****************************************************/
-/*# BELOW 704px  */
+/*# BELOW 704px SMALLER TABLETS */
 /*=*****************************************************/
 
 @media (max-width: 44em) {
@@ -259,6 +259,92 @@ IMPORTANT a media query should work over a range of at least 200 or 300px!!!
     grid-column: span 2;
     margin-bottom: 3.2rem;
   }
+}
+
+/* NB many times, for mobiles we do a media query at about 600px; however we
+just did a media query at about 700px therefore in this case there is no need to implement one at 600px */
+
+
+/*=*****************************************************/
+/*# BELOW about 554px (mobiles)  */
+/*=*****************************************************/
+
+/* NB let's work in the dev tools with a width that is between 350px and 450px (because it is representative of many phones) */
+
+@media (max-width: 34em) {
+  .grid {
+    gap: 4.8rem
+  }
+
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols, .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .btn, .btn:link, .btn:visited {
+    padding: 2.4rem 1.6rem
+  }
+
+  .section-hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+
+  .hero {
+    padding: 0 3.2rem
+  }
+
+  .hero-img {
+    width: 80%
+  }
+
+  .logos img {
+    height: 1.2rem
+  }
+
+  /* .step-text-box:nth-child(1) {
+    background-color: red;
+  }
+
+  .step-text-box:nth-child(4) {
+    background-color: green;
+  } */
+
+  .step-img-box:nth-child(2) {
+    /* NB keep in mind that 2 is the second child of the parent container, not the second instance of the class .step-img-box */
+    /* NB play with the code above to see how it works */
+    grid-row: 1
+  }
+
+  .step-img-box:nth-child(6) {
+    grid-row: 5
+  }
+
+  /* NB now the position of the images is a bit ambiguous (it does not convey if it refers to the rtext above or below) */
+  /* we cannot edit the gap selectively, therefore you are going to move them with a small trick */
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem
+  }
+
+  .cta-img-box {
+    height: 32rem;
+    grid-row: 1
+  }
+
 }
 
 /*
