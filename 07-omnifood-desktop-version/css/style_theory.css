@@ -1,0 +1,91 @@
+/*
+====== Design system
+
+==== 01 TYPOGRAPHY SYSTEM
+# FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+# FONT WEIGHTS
+Default: 400
+
+# LINE HEIGHTS
+Default: 1
+
+==== 02 COLORS
+# Primary #e67e22
+# Tints
+# Shades
+# Accents
+# Greys
+
+==== 03 IMAGES
+
+==== 04 ICONS
+
+==== 05 SHADOWS
+
+==== 06 BORDER-RADIUS
+
+==== 07 WHITESPACE
+# SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+/* global reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* NB this is the root element (for rem) */
+/* NB and for creating responsive designs, when you have smaller screens you want all the lengths to be a little smaller */
+/* NB and instead of writing media queries to change all those values one by one, you can simply change the root element font size */
+html {
+  /* font-size: 10px */
+  /* IMPORTANT careful because this above overwrites the default browser font size of the user */
+  /* you could set this value to make your calculations easier, but then everything will be forced to this font size */
+  /* i.e. it will cause usability problems for people who have set their default font size on the browser to another (bigger value) */
+  /* and when they load the page, they would always get a font-size of 10px */
+  /* NB instead we write: */
+  /* = Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  /* this because: 10px / 16px = 0.625 = 62.5% */
+  /* note 0.625 * 16 = 10px which is our reference value */
+}
+
+/* reset some properties of the body */
+body {
+  font-family: sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+.test {
+  background-color: bisque;
+  /* padding: 100px; */
+  /* width: 1000px; */
+  /* max-width: 1000px; */
+  /* NB the max-width automatically makes this div flexible (it adapts to the viewport width) */
+  /* i.e. when there is no more additional space to fit these 100px, the element should have the width of the parent container */
+  /* IMPORTANT RULE for max-width */
+  /* 
+  / if the container width is larger than the specified max-width,
+  / then the width of the element is equal to the value that was specified for max-width.
+  / However, if the container width is less than the specified max-width,
+  / then the width of the element will be 100% of the container element width
+  */
+
+  /* = rem = root element font size */
+  /* =  if we don't define any font size on the root element,
+  = then one rem is simply equal to the default browser font size,
+  = which is always 16 pixels unless the user does actually change it.
+  NB this is the strength of the rem unit: if we change the root element font size, this will automatically change all the lengths that are defined anywhere in the CSS
+  */
+  /* 1rem = 16px */
+  max-width: 50rem;
+  padding: 4rem;
+  font-size: 2rem;
+}

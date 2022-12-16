@@ -1,0 +1,3 @@
+Tips:
+- select all the elements with classes (no id selectors, no element selectors) because this will give our css code a lot more consistency
+- if you need buttons that when clicked will bring you on another point in the page, use anchor elements: links are for going somewhere on the page or going to some other page, while a button element should only be used for actions (everything that is not related to navigation basically)
