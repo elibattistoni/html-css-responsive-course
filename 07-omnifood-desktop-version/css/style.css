@@ -7,9 +7,16 @@
 
 # FONT WEIGHTS
 Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
 
 # LINE HEIGHTS
 Default: 1
+Small: 1.05
+Paragraph default: 1.6
+NB we have to keep track of all the values used, so that later, as our file and
+NB css code grow, we don't end up using different values and make the design inconsistent
 
 ==== 02 COLORS
 # Primary
@@ -33,6 +40,8 @@ IMPORTANT https://maketintsandshades.com/
 ==== 05 SHADOWS
 
 ==== 06 BORDER-RADIUS
+you can use this in pixel because you don't want to scale it up or down
+Default: 9px
 
 ==== 07 WHITESPACE
 # SPACING SYSTEM (px) also used for size e.g. images
@@ -58,20 +67,9 @@ body {
   color: #555;
 }
 
-.section-hero {
-  background-color: #fdf2e9;
-  padding: 9.6rem 0;
-}
-
-.hero {
-  max-width: 130rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 9.6rem;
-}
-
+/* ========================================================================== */
+/* ## GENERAL REUSABLE COMPONENTS */
+/* ========================================================================== */
 .heading-primary {
   font-size: 5.2rem;
   font-weight: 700;
@@ -81,12 +79,6 @@ body {
   /* NB here we use px and not rem because it is a very small distance and we will not scale up or down */
   /* so in these situations we can simply use pixels */
   margin-bottom: 3.2rem;
-}
-
-.hero-description {
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem;
 }
 
 .btn:link, .btn:visited {
@@ -127,6 +119,89 @@ body {
 /* NB therefore we create helpers classes, like this one below*/
 .margin-right-sm {
   margin-right: 1.6rem !important;
+}
+
+/* ========================================================================== */
+/* ## HEADER */
+/* ========================================================================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+
+  /* because the header will be sticky later and with a fixed height it is easier to implement */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  height: 2.2rem;
+  /* here we are breaking the rule */
+}
+
+/* ========================================================================== */
+/* ## NAVIGATION */
+/* ========================================================================== */
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.main-nav-link:link, .main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover, .main-nav-link:active {
+  color: #cf711f
+}
+
+/*| .main-nav-link.nav-cta it means that the element has to have both classes */
+/*| instead .main-nav-link .nav-cta is the descendant selector*/
+/*| so this has a higher specificity than the selectors above .main-nav-link:link, .main-nav-link:visited */
+/*| and in this way we can make ture that this always applies */
+.main-nav-link.nav-cta:link, .main-nav-link.nav-cta:visited {
+  border-radius: 9px;
+  padding: 1.2rem 2.4rem;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.main-nav-link.nav-cta:hover, .main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+
+
+/* ========================================================================== */
+/* ## HERO SECTION */
+/* ========================================================================== */
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 9.6rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
 }
 
 .hero-img {
