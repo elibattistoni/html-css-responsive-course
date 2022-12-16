@@ -70,6 +70,7 @@ body {
 /* ========================================================================== */
 /* ## GENERAL REUSABLE COMPONENTS */
 /* ========================================================================== */
+
 .heading-primary {
   font-size: 5.2rem;
   font-weight: 700;
@@ -119,6 +120,40 @@ body {
 /* NB therefore we create helpers classes, like this one below*/
 .margin-right-sm {
   margin-right: 1.6rem !important;
+}
+
+/* ========================================================================== */
+/* ## CREATE A REUSABLE CONTAINER */
+/* ========================================================================== */
+.container {
+  max-width: 120rem;
+  /* NB conventions that we can use: 1200px or 1140px */
+
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  /* NB with this you basically subtract 32px from the 1200px and eventually you will get really close to 1140px */
+}
+
+/* ========================================================================== */
+/* ## CREATE A REUSABLE GRID */
+/* ========================================================================== */
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+/* NB -- (two dashes) stand for variations of the original */
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* ========================================================================== */
@@ -188,6 +223,8 @@ body {
   padding: 4.8rem 0 9.6rem 0;
 }
 
+/* NB the hero section will be a bit bigger than the rest of the content
+and this is why we don't add the container class to the div hero */
 .hero {
   max-width: 130rem;
   margin: 0 auto;
@@ -243,3 +280,12 @@ body {
 
 /* NB important to check the constrast of the colors on the page!! */
 /* NB go to coolors ==> contrast checker ==> https://coolors.co/contrast-checker/112a46-acc8e5 */
+
+
+
+/* ========================================================================== */
+/* ## HOW IT WORKS SECTION */
+/* ========================================================================== */
+
+
+.section-how {}
