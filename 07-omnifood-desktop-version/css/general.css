@@ -1,0 +1,199 @@
+/*
+====== Design system
+
+==== 01 TYPOGRAPHY SYSTEM
+# FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+# FONT WEIGHTS
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+# LINE HEIGHTS
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+NB we have to keep track of all the values used, so that later, as our file and
+NB css code grow, we don't end up using different values and make the design inconsistent
+
+# LETTER SPACING
+- 0.5px
+0.75px
+
+==== 02 COLORS
+# Primary
+#e67e22
+
+# Tints
+IMPORTANT https://maketintsandshades.com/
+#fdf2e9
+#fae5d3
+
+
+# Shades
+#cf711f
+
+# Accents
+
+# Greys
+#555
+#333
+
+==== 03 IMAGES
+
+==== 04 ICONS
+
+==== 05 SHADOWS
+
+==== 06 BORDER-RADIUS
+you can use this in pixel because you don't want to scale it up or down
+Default: 9px
+
+==== 07 WHITESPACE
+# SPACING SYSTEM (px) also used for size e.g. images
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+/* global reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+/* ========================================================================== */
+/* ## GENERAL REUSABLE COMPONENTS */
+/* ========================================================================== */
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+  /* NB here we use px and not rem because it is a very small distance and we will not scale up or down */
+  /* so in these situations we can simply use pixels */
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  font-weight: 600;
+  /* NB put transition on original "state" */
+  transition: background-color 0.3s;
+}
+
+/* if you have both buttons of the same color, they are both competing for the user's attention, even if one is more important than the other */
+/* so you should make it clear that there is a button that is more important than the other one */
+.btn--full:link, .btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn--full:hover, .btn--full:active {
+  background-color: #cf711f;
+}
+
+.btn--outline:link, .btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover, .btn--outline:active {
+  background-color: #fdf2e9;
+  /* border: 3px solid #fff; you will see that this causes all the layout to shift a bit, because the border is added outside */
+  /* NB trick to add border inside */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* NB adding margins to these buttons is against the idea that these buttons should be standalone components */
+/* NB therefore we create helpers classes, like this one below*/
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+/* ========================================================================== */
+/* ## CREATE A REUSABLE CONTAINER */
+/* ========================================================================== */
+.container {
+  max-width: 120rem;
+  /* NB conventions that we can use: 1200px or 1140px */
+
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  /* NB with this you basically subtract 32px from the 1200px and eventually you will get really close to 1140px */
+}
+
+/* ========================================================================== */
+/* ## CREATE A REUSABLE GRID */
+/* ========================================================================== */
+
+.grid {
+  display: grid;
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
+}
+
+/* NB -- (two dashes) stand for variations of the original */
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--center-v {
+  align-items: center
+}
