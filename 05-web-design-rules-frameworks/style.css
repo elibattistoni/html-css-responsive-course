@@ -57,7 +57,10 @@ h2 {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 500;
-  display: inline-block
+  display: inline-block;
+  border-radius: 100px;
+  /* NB if you want to make it as much rounded as possible: if you increment this nothing happens */
+  /* as long as it is taller than the element is tall (it cannot be less than the height */
 }
 
 .btn:hover, .btn:active {
@@ -72,6 +75,10 @@ h2 {
 .btn--small {
   font-size: 14px;
   padding: 8px 12px;
+}
+
+img {
+  border-radius: 12px;
 }
 
 
@@ -131,7 +138,8 @@ img {
 .testimonial-section {
   background-color: #087f5b;
   color: #fff;
-  padding: 24px
+  padding: 24px;
+  border-radius: 12px;
 }
 
 .testimonial-box {
@@ -155,6 +163,12 @@ img {
 .chair {
   /* box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.8); */
   box-shadow: 0px 20px 30px 0 rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+}
+
+.chair img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .chair-box {
