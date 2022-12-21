@@ -19,3 +19,9 @@ tool to check contrast between text and background colors
     https://coolors.co/contrast-checker/112a46-acc8e5
 
 - use squoosh to compress images for lower file size and better performance
+
+# Inspiration
+### Landbook https://land-book.com/
+### One Page Love https://onepagelove.com/
+### Awwwards https://www.awwwards.com/
+### Screenlame (for individual components) https://screenlane.com/
