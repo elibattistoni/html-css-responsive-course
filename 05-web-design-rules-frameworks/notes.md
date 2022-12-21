@@ -17,3 +17,5 @@ for generating the accent color (secondary color to the main color)
 tool to check contrast between text and background colors
     color contrast checker
     https://coolors.co/contrast-checker/112a46-acc8e5
+
+- use squoosh to compress images for lower file size and better performance
